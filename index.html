@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DM PASSIVE BUILDINGS SRL - Construcții Case Pasive</title>
+    <title>DM PASSIVE BUILDINGS - Construcții Case Pasive și Eficiență Energetică</title>
     <style>
         * {
             margin: 0;
@@ -12,11 +12,10 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            color: #2c3e50;
+            background: #fff;
         }
         
         .container {
@@ -25,308 +24,564 @@
             padding: 0 20px;
         }
         
+        /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         
         nav {
-            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #27ae60;
         }
         
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            gap: 2rem;
         }
         
         nav a {
-            color: #667eea;
+            color: #2c3e50;
             text-decoration: none;
-            padding: 0.5rem 1.5rem;
             font-weight: 500;
-            transition: all 0.3s ease;
-            border-radius: 5px;
+            transition: color 0.3s;
         }
         
         nav a:hover {
-            background: #667eea;
-            color: white;
+            color: #27ae60;
         }
         
-        section {
-            background: white;
-            margin: 2rem auto;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50%;
+            width: 150%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="white" stroke-width="0.2" opacity="0.1"/><line x1="0" y1="0" x2="100" y2="100" stroke="white" stroke-width="0.2" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
         
         h2 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .service-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        /* Programs Section */
+        .programs {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .program-banner {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .program-banner h3 {
             font-size: 2rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         
-        .announcement {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .program-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
-        .announcement h3 {
-            color: #764ba2;
-            margin-bottom: 0.5rem;
+        /* Announcements */
+        .announcements {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
         
-        .announcement .date {
-            color: #666;
+        .announcement-card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid #27ae60;
+        }
+        
+        .announcement-date {
+            color: #95a5a6;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
+        }
+        
+        .announcement-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .contact h2 {
+            color: white;
         }
         
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .contact-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
         .contact-item h3 {
-            color: #667eea;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
+            color: #3498db;
+        }
+        
+        .contact-item p {
+            line-height: 1.8;
         }
         
         .contact-item a {
-            color: #764ba2;
+            color: white;
             text-decoration: none;
-            font-weight: 500;
         }
         
         .contact-item a:hover {
             text-decoration: underline;
         }
         
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #27ae60;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
         }
         
-        .service-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .cta-primary {
+            background: #f39c12;
             color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
         }
         
+        /* Footer */
         footer {
-            background: #333;
-            color: white;
-            text-align: center;
+            background: #1a252f;
+            color: #95a5a6;
             padding: 2rem 0;
-            margin-top: 3rem;
+            text-align: center;
         }
         
-        footer p {
-            opacity: 0.8;
+        /* Mobile Responsive */
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            nav ul {
+                display: none;
             }
             
-            section {
-                padding: 1.5rem;
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
             }
             
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
-        }
-        
-        .cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .cta:hover {
-            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <h1>DM PASSIVE BUILDINGS SRL</h1>
-            <p>Experți în Construcții de Case Pasive și Eficiente Energetic</p>
-        </div>
-    </header>
-    
-    <nav>
-        <div class="container">
+        <nav class="container">
+            <div class="logo">DM PASSIVE BUILDINGS</div>
             <ul>
                 <li><a href="#acasa">Acasă</a></li>
-                <li><a href="#despre">Despre Noi</a></li>
-                <li><a href="#anunturi">Anunțuri</a></li>
                 <li><a href="#servicii">Servicii</a></li>
+                <li><a href="#programe">Programe</a></li>
+                <li><a href="#anunturi">Anunțuri</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
     
-    <div class="container">
-        <section id="acasa">
-            <h2>Bine ați venit!</h2>
-            <p>DM PASSIVE BUILDINGS SRL este specializată în construcția de case pasive și clădiri cu eficiență energetică maximă. Cu experiență în domeniul construcțiilor durabile, oferim soluții complete pentru locuințe moderne, ecologice și economice.</p>
-            <p style="margin-top: 1rem;"><strong>De ce să alegeți o casă pasivă?</strong></p>
-            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
-                <li>Consum energetic redus cu până la 90%</li>
-                <li>Confort termic superior în toate anotimpurile</li>
-                <li>Calitate superioară a aerului interior</li>
-                <li>Investiție pe termen lung cu costuri de întreținere minime</li>
-            </ul>
-        </section>
-        
-        <section id="despre">
-            <h2>Despre Noi</h2>
-            <p>Cu o echipă de profesioniști certificați în construcții pasive, DM PASSIVE BUILDINGS SRL aduce standardele europene de eficiență energetică în România. Fiecare proiect este tratat cu atenție la detalii și personalizat conform nevoilor clienților noștri.</p>
-            <p style="margin-top: 1rem;">Suntem membri certificați ai Asociației Române pentru Case Pasive și respectăm cele mai înalte standarde de calitate în construcții.</p>
-        </section>
-        
-        <section id="anunturi">
-            <h2>Anunțuri</h2>
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+        <div class="container hero-content">
+            <div class="badge">✓ Firmă Certificată PassivHaus</div>
+            <h1>Construim cu Viziune și Eficiență</h1>
+            <p class="subtitle">Proiecte de Case Pasive și Renovări Energetice la Standarde Superioare</p>
+            <p>Suntem specializați în construcții de case pasive și modernizări energetice. Cu o experiență de peste 15 ani în domeniu și peste 250 de proiecte finalizate, oferim soluții complete pentru anvelopări termice, instalări de panouri fotovoltaice și construcții civile de înaltă calitate.</p>
             
-            <div class="announcement">
-                <h3>Proiect Nou în București - Cartier Rezidențial Verde</h3>
-                <p class="date">Publicat: 5 Noiembrie 2024</p>
-                <p>Am început lucrările la un nou complex rezidențial de case pasive în zona de nord a Bucureștiului. Proiectul include 12 unități locative cu certificare PassivHaus. Detalii și rezervări la telefon.</p>
-            </div>
+            <a href="#contact" class="cta-button">Solicită Consultanță Gratuită</a>
             
-            <div class="announcement">
-                <h3>Workshop Gratuit: Introducere în Case Pasive</h3>
-                <p class="date">Publicat: 1 Noiembrie 2024</p>
-                <p>Organizăm un workshop gratuit pe 20 noiembrie 2024 pentru cei interesați să afle mai multe despre beneficiile caselor pasive. Locuri limitate - înscrieri la contact@dmpassivebuildings.ro</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">250+</span>
+                    <span class="stat-label">Proiecte Finalizate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Ani Experiență</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">90%</span>
+                    <span class="stat-label">Economie Energie</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Clienți Mulțumiți</span>
+                </div>
             </div>
-            
-            <div class="announcement">
-                <h3>Angajăm: Inginer Constructor Specializat</h3>
-                <p class="date">Publicat: 28 Octombrie 2024</p>
-                <p>Căutăm un inginer constructor cu experiență în construcții eficiente energetic. Oferim salariu competitiv și oportunități de dezvoltare profesională. CV-urile se trimit pe email.</p>
-            </div>
-        </section>
-        
-        <section id="servicii">
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="servicii">
+        <div class="container">
             <h2>Serviciile Noastre</h2>
-            <div class="services">
-                <div class="service-item">
-                    <h3>🏠</h3>
-                    <p>Proiectare Case Pasive</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Case Pasive</h3>
+                    <p>Proiectare și construcție de case pasive certificate, cu consum energetic minim și confort maxim pe tot parcursul anului.</p>
                 </div>
-                <div class="service-item">
-                    <h3>🔧</h3>
-                    <p>Construcție la Cheie</p>
+                <div class="service-card">
+                    <div class="service-icon">🌡️</div>
+                    <h3>Anvelopări Termice</h3>
+                    <p>Izolații termice profesionale pentru clădiri existente, reducând consumul de energie cu până la 60%.</p>
                 </div>
-                <div class="service-item">
-                    <h3>📋</h3>
-                    <p>Consultanță Energetică</p>
+                <div class="service-card">
+                    <div class="service-icon">☀️</div>
+                    <h3>Panouri Fotovoltaice</h3>
+                    <p>Instalare sisteme fotovoltaice complete pentru independență energetică și reducerea costurilor.</p>
                 </div>
-                <div class="service-item">
-                    <h3>🌱</h3>
-                    <p>Reabilitare Termică</p>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Renovări Complete</h3>
+                    <p>Servicii complete de renovare și modernizare a clădirilor rezidențiale și comerciale.</p>
                 </div>
-                <div class="service-item">
-                    <h3>📊</h3>
-                    <p>Audit Energetic</p>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Audit Energetic</h3>
+                    <p>Evaluare detaliată a performanței energetice și recomandări personalizate pentru îmbunătățiri.</p>
                 </div>
-                <div class="service-item">
-                    <h3>🛠️</h3>
-                    <p>Mentenanță</p>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Consultanță</h3>
+                    <p>Consiliere expertă pentru accesarea fondurilor europene și implementarea proiectelor de eficiență energetică.</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Suntem aici pentru a vă ajuta să construiți casa visurilor dumneavoastră - eficientă, confortabilă și durabilă.</p>
+        </div>
+    </section>
+    
+    <!-- Programs Section -->
+    <section class="programs" id="programe">
+        <div class="container">
+            <h2>Programe de Finanțare</h2>
+            <div class="program-banner">
+                <h3>Parteneri Oficiali în Programe Naționale</h3>
+                <p>Vă ajutăm să accesați fonduri europene pentru modernizarea energetică a locuinței</p>
+                <div class="program-list">
+                    <div class="program-item">
+                        <strong>Casa Verde Fotovoltaice</strong>
+                        <p>Finanțare până la 20.000 RON</p>
+                    </div>
+                    <div class="program-item">
+                        <strong>PNRR Renovare</strong>
+                        <p>Finanțare până la 60% din costuri</p>
+                    </div>
+                    <div class="program-item">
+                        <strong>Casa Eficientă Energetic</strong>
+                        <p>Grant până la 70.000 EUR</p>
+                    </div>
+                    <div class="program-item">
+                        <strong>AFM Reabilitare Termică</strong>
+                        <p>Cofinanțare pentru blocuri</p>
+                    </div>
+                </div>
+                <a href="#contact" class="cta-button cta-primary">Verifică Eligibilitatea</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Announcements Section -->
+    <section class="announcements" id="anunturi">
+        <div class="container">
+            <h2>Anunțuri și Noutăți</h2>
             
+            <div class="announcement-card">
+                <div class="announcement-date">5 Noiembrie 2024</div>
+                <h3>Lansare Proiect Rezidențial - Cartier Verde București Nord</h3>
+                <p>Am demarat construcția unui nou ansamblu de 20 case pasive în zona de nord a Bucureștiului. Proiectul include case cu certificare PassivHaus, panouri fotovoltaice integrate și pompe de căldură. Livrare estimată: Q4 2025. Rezervări deschise - doar 8 unități disponibile!</p>
+            </div>
+            
+            <div class="announcement-card">
+                <div class="announcement-date">28 Octombrie 2024</div>
+                <h3>Sesiune Nouă Casa Verde Fotovoltaice</h3>
+                <p>S-a deschis o nouă sesiune de înscrieri în programul Casa Verde Fotovoltaice. Oferim consultanță gratuită și suport complet pentru depunerea dosarului. Locuri limitate - contactați-ne pentru programare!</p>
+            </div>
+            
+            <div class="announcement-card">
+                <div class="announcement-date">15 Octombrie 2024</div>
+                <h3>Angajăm: Inginer Constructor și Manager Proiect</h3>
+                <p>Extindem echipa! Căutăm profesioniști pasionați de construcții sustenabile. Oferim: salariu competitiv, training în tehnologii PassivHaus, oportunități de dezvoltare. Trimiteți CV-ul la: cariere@dmpassivebuildings.ro</p>
+            </div>
+            
+            <div class="announcement-card">
+                <div class="announcement-date">1 Octombrie 2024</div>
+                <h3>Workshop Gratuit: Beneficiile Caselor Pasive</h3>
+                <p>Organizăm un workshop gratuit pe 20 noiembrie 2024, ora 18:00, despre avantajele caselor pasive și oportunitățile de finanțare disponibile. Locație: Sediul nostru din București. Înscrieri: contact@dmpassivebuildings.ro</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact</h2>
             <div class="contact-grid">
                 <div class="contact-item">
-                    <h3>📞 Telefon</h3>
-                    <p><a href="tel:+40721234567">+40 721 234 567</a></p>
-                    <p><a href="tel:+40312345678">+40 31 234 5678</a></p>
+                    <h3>📍 Adresă</h3>
+                    <p>
+                        Strada Energiei Nr. 45<br>
+                        Sector 1, București<br>
+                        România, 010573
+                    </p>
                 </div>
-                
+                <div class="contact-item">
+                    <h3>📞 Telefon</h3>
+                    <p>
+                        <a href="tel:+40721234567">+40 721 234 567</a><br>
+                        <a href="tel:+40312345678">+40 31 234 5678</a><br>
+                        Urgențe: <a href="tel:+40799123456">+40 799 123 456</a>
+                    </p>
+                </div>
                 <div class="contact-item">
                     <h3>✉️ Email</h3>
-                    <p><a href="mailto:contact@dmpassivebuildings.ro">contact@dmpassivebuildings.ro</a></p>
-                    <p><a href="mailto:info@dmpassivebuildings.ro">info@dmpassivebuildings.ro</a></p>
+                    <p>
+                        <a href="mailto:contact@dmpassivebuildings.ro">contact@dmpassivebuildings.ro</a><br>
+                        <a href="mailto:proiecte@dmpassivebuildings.ro">proiecte@dmpassivebuildings.ro</a><br>
+                        <a href="mailto:suport@dmpassivebuildings.ro">suport@dmpassivebuildings.ro</a>
+                    </p>
                 </div>
-                
-                <div class="contact-item">
-                    <h3>📍 Adresă</h3>
-                    <p>Str. Constructorilor Nr. 10<br>
-                    Sector 1, București<br>
-                    România</p>
-                </div>
-                
                 <div class="contact-item">
                     <h3>🕐 Program</h3>
-                    <p>Luni - Vineri: 9:00 - 18:00<br>
-                    Sâmbătă: 10:00 - 14:00<br>
-                    Duminică: Închis</p>
+                    <p>
+                        Luni - Vineri: 08:00 - 18:00<br>
+                        Sâmbătă: 09:00 - 14:00<br>
+                        Duminică: Închis<br>
+                        <em>Consultații doar cu programare</em>
+                    </p>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="mailto:contact@dmpassivebuildings.ro" class="cta">Solicită o Consultație Gratuită</a>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
     
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 DM PASSIVE BUILDINGS SRL. Toate drepturile rezervate.</p>
-            <p style="margin-top: 0.5rem;">CUI: RO12345678 | J40/1234/2024</p>
+            <p>&copy; 2024 DM PASSIVE BUILDINGS SRL | CUI: RO44556677 | J40/12345/2024</p>
+            <p>Toate drepturile rezervate | Membru PassivHaus România</p>
         </div>
     </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const menu = document.querySelector('nav ul');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            menu.style.position = 'absolute';
+            menu.style.top = '100%';
+            menu.style.left = '0';
+            menu.style.right = '0';
+            menu.style.background = 'white';
+            menu.style.flexDirection = 'column';
+            menu.style.padding = '1rem';
+            menu.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        });
+    </script>
 </body>
 </html>
