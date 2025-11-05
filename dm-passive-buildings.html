@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM PASSIVE BUILDINGS SRL - Construcții Case Pasive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        section {
+            background: white;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .announcement {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .announcement h3 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .announcement .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .service-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DM PASSIVE BUILDINGS SRL</h1>
+            <p>Experți în Construcții de Case Pasive și Eficiente Energetic</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#acasa">Acasă</a></li>
+                <li><a href="#despre">Despre Noi</a></li>
+                <li><a href="#anunturi">Anunțuri</a></li>
+                <li><a href="#servicii">Servicii</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="acasa">
+            <h2>Bine ați venit!</h2>
+            <p>DM PASSIVE BUILDINGS SRL este specializată în construcția de case pasive și clădiri cu eficiență energetică maximă. Cu experiență în domeniul construcțiilor durabile, oferim soluții complete pentru locuințe moderne, ecologice și economice.</p>
+            <p style="margin-top: 1rem;"><strong>De ce să alegeți o casă pasivă?</strong></p>
+            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                <li>Consum energetic redus cu până la 90%</li>
+                <li>Confort termic superior în toate anotimpurile</li>
+                <li>Calitate superioară a aerului interior</li>
+                <li>Investiție pe termen lung cu costuri de întreținere minime</li>
+            </ul>
+        </section>
+        
+        <section id="despre">
+            <h2>Despre Noi</h2>
+            <p>Cu o echipă de profesioniști certificați în construcții pasive, DM PASSIVE BUILDINGS SRL aduce standardele europene de eficiență energetică în România. Fiecare proiect este tratat cu atenție la detalii și personalizat conform nevoilor clienților noștri.</p>
+            <p style="margin-top: 1rem;">Suntem membri certificați ai Asociației Române pentru Case Pasive și respectăm cele mai înalte standarde de calitate în construcții.</p>
+        </section>
+        
+        <section id="anunturi">
+            <h2>Anunțuri</h2>
+            
+            <div class="announcement">
+                <h3>Proiect Nou în București - Cartier Rezidențial Verde</h3>
+                <p class="date">Publicat: 5 Noiembrie 2024</p>
+                <p>Am început lucrările la un nou complex rezidențial de case pasive în zona de nord a Bucureștiului. Proiectul include 12 unități locative cu certificare PassivHaus. Detalii și rezervări la telefon.</p>
+            </div>
+            
+            <div class="announcement">
+                <h3>Workshop Gratuit: Introducere în Case Pasive</h3>
+                <p class="date">Publicat: 1 Noiembrie 2024</p>
+                <p>Organizăm un workshop gratuit pe 20 noiembrie 2024 pentru cei interesați să afle mai multe despre beneficiile caselor pasive. Locuri limitate - înscrieri la contact@dmpassivebuildings.ro</p>
+            </div>
+            
+            <div class="announcement">
+                <h3>Angajăm: Inginer Constructor Specializat</h3>
+                <p class="date">Publicat: 28 Octombrie 2024</p>
+                <p>Căutăm un inginer constructor cu experiență în construcții eficiente energetic. Oferim salariu competitiv și oportunități de dezvoltare profesională. CV-urile se trimit pe email.</p>
+            </div>
+        </section>
+        
+        <section id="servicii">
+            <h2>Serviciile Noastre</h2>
+            <div class="services">
+                <div class="service-item">
+                    <h3>🏠</h3>
+                    <p>Proiectare Case Pasive</p>
+                </div>
+                <div class="service-item">
+                    <h3>🔧</h3>
+                    <p>Construcție la Cheie</p>
+                </div>
+                <div class="service-item">
+                    <h3>📋</h3>
+                    <p>Consultanță Energetică</p>
+                </div>
+                <div class="service-item">
+                    <h3>🌱</h3>
+                    <p>Reabilitare Termică</p>
+                </div>
+                <div class="service-item">
+                    <h3>📊</h3>
+                    <p>Audit Energetic</p>
+                </div>
+                <div class="service-item">
+                    <h3>🛠️</h3>
+                    <p>Mentenanță</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Suntem aici pentru a vă ajuta să construiți casa visurilor dumneavoastră - eficientă, confortabilă și durabilă.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📞 Telefon</h3>
+                    <p><a href="tel:+40721234567">+40 721 234 567</a></p>
+                    <p><a href="tel:+40312345678">+40 31 234 5678</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p><a href="mailto:contact@dmpassivebuildings.ro">contact@dmpassivebuildings.ro</a></p>
+                    <p><a href="mailto:info@dmpassivebuildings.ro">info@dmpassivebuildings.ro</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📍 Adresă</h3>
+                    <p>Str. Constructorilor Nr. 10<br>
+                    Sector 1, București<br>
+                    România</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🕐 Program</h3>
+                    <p>Luni - Vineri: 9:00 - 18:00<br>
+                    Sâmbătă: 10:00 - 14:00<br>
+                    Duminică: Închis</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="mailto:contact@dmpassivebuildings.ro" class="cta">Solicită o Consultație Gratuită</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DM PASSIVE BUILDINGS SRL. Toate drepturile rezervate.</p>
+            <p style="margin-top: 0.5rem;">CUI: RO12345678 | J40/1234/2024</p>
+        </div>
+    </footer>
+</body>
+</html>
